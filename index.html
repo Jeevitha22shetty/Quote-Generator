@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            border-radius: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover {
+            background: #005fcc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Random Quote Generator</h2>
+    <p id="quote">Click the button to generate a quote!</p>
+    <button onclick="generateQuote()">New Quote</button>
+</div>
+
+<script>
+    const quotes = [
+        "Believe in yourself.",
+        "Every moment is a fresh beginning.",
+        "Dream big and dare to fail.",
+        "Success is not final; failure is not fatal.",
+        "It always seems impossible until it’s done.",
+        "Do something today that your future self will thank you for."
+    ];
+
+    function generateQuote() {
+        const random = Math.floor(Math.random() * quotes.length);
+        document.getElementById("quote").innerText = quotes[random];
+    }
+</script>
+
+</body>
+</html>
